@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet var greenLight: UIView!
     
     
-    @IBOutlet var colorChangeButton: UIButton!
+    @IBOutlet var lightChangeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorChangeButton.configuration = setupButton(with: "START")
+        lightChangeButton.configuration = setupButton(with: "START")
         
         redLight.layer.cornerRadius = redLight.frame.height / 2
         yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func colorChangeTapped() {
+    @IBAction func lightChangeTapped() {
         
         if redLight.alpha == 0.5 && yellowLight.alpha == 0.5 {
             greenLight.alpha = 0.5
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             greenLight.alpha = 1
         }
         
-        colorChangeButton.configuration = setupButton(with: "NEXT")
+        lightChangeButton.configuration = setupButton(with: "NEXT")
         
     }
     

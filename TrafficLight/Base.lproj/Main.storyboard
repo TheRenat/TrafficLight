@@ -39,13 +39,12 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wi-hk-RKl">
                                 <rect key="frame" x="77" y="787" width="274" height="31"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="filled" title="START" cornerStyle="capsule">
                                     <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="colorChangeTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Boq-Wy-blz"/>
+                                    <action selector="lightChangeTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Boq-Wy-blz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,8 +66,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="colorChangeButton" destination="9wi-hk-RKl" id="2aR-KS-g27"/>
                         <outlet property="greenLight" destination="x54-Nv-Nfi" id="aNb-Nz-2JX"/>
+                        <outlet property="lightChangeButton" destination="9wi-hk-RKl" id="2aR-KS-g27"/>
                         <outlet property="redLight" destination="hdC-PD-aUy" id="hYQ-2T-bnh"/>
                         <outlet property="yellowLight" destination="fIb-Xc-kDo" id="h9H-tb-cvz"/>
                     </connections>
