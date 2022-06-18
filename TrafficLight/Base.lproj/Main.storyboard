@@ -37,14 +37,16 @@
                                     <constraint firstAttribute="width" secondItem="x54-Nv-Nfi" secondAttribute="height" multiplier="1:1" id="t6C-0k-fnB"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wi-hk-RKl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wi-hk-RKl">
                                 <rect key="frame" x="77" y="787" width="274" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                     <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="colorChangeTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Boq-Wy-blz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -52,15 +54,24 @@
                         <constraints>
                             <constraint firstItem="fIb-Xc-kDo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2ak-uI-Ehh"/>
                             <constraint firstItem="hdC-PD-aUy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6CL-dP-9uC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9wi-hk-RKl" secondAttribute="bottom" constant="74" id="Bdk-HN-dGd"/>
                             <constraint firstItem="x54-Nv-Nfi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="E7r-wY-cQM"/>
                             <constraint firstItem="hdC-PD-aUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134.5" id="JO1-D9-4bY"/>
                             <constraint firstItem="hdC-PD-aUy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NjS-y1-4lI"/>
+                            <constraint firstItem="9wi-hk-RKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="Z19-rs-YnB"/>
                             <constraint firstItem="fIb-Xc-kDo" firstAttribute="leading" secondItem="hdC-PD-aUy" secondAttribute="leading" id="dhO-Dk-Fm7"/>
+                            <constraint firstItem="9wi-hk-RKl" firstAttribute="centerX" secondItem="x54-Nv-Nfi" secondAttribute="centerX" id="fNS-Bh-wAq"/>
                             <constraint firstItem="x54-Nv-Nfi" firstAttribute="top" secondItem="fIb-Xc-kDo" secondAttribute="bottom" constant="25" id="llt-UC-oXO"/>
                             <constraint firstItem="fIb-Xc-kDo" firstAttribute="leading" secondItem="x54-Nv-Nfi" secondAttribute="leading" id="qg6-uy-byN"/>
                             <constraint firstItem="fIb-Xc-kDo" firstAttribute="top" secondItem="hdC-PD-aUy" secondAttribute="bottom" constant="25" id="vAP-jV-0mi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorChangeButton" destination="9wi-hk-RKl" id="2aR-KS-g27"/>
+                        <outlet property="greenLight" destination="x54-Nv-Nfi" id="aNb-Nz-2JX"/>
+                        <outlet property="redLight" destination="hdC-PD-aUy" id="hYQ-2T-bnh"/>
+                        <outlet property="yellowLight" destination="fIb-Xc-kDo" id="h9H-tb-cvz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
