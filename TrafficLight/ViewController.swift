@@ -8,11 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private enum CurrentLight {
+        case red, yellow, green
+    }
+    
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
-    
     
     @IBOutlet var lightChangeButton: UIButton!
     
