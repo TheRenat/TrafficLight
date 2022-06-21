@@ -19,32 +19,42 @@ class ViewController: UIViewController {
     
     @IBOutlet var lightChangeButton: UIButton!
     
+    private var currentLight = CurrentLight.red
+    private let lightOn: CGFloat = 1
+    private let lightOff: CGFloat = 0.5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         lightChangeButton.configuration = setupButton(with: "START")
         
+        redLight.alpha = lightOff
+        yellowLight.alpha = lightOff
+        greenLight.alpha = lightOff
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
         redLight.layer.cornerRadius = redLight.frame.height / 2
         yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
         greenLight.layer.cornerRadius = greenLight.frame.height / 2
-        
-        redLight.alpha = 0.5
-        yellowLight.alpha = 0.5
-        greenLight.alpha = 0.5
-        
     }
 
     @IBAction func lightChangeTapped() {
         
-        if redLight.alpha == 0.5 && yellowLight.alpha == 0.5 {
-            greenLight.alpha = 0.5
-            redLight.alpha = 1
-        } else if redLight.alpha == 1 {
-            redLight.alpha = 0.5
-            yellowLight.alpha = 1
-        } else {
-            yellowLight.alpha = 0.5
-            greenLight.alpha = 1
+        switch currentLight {
+        case .red:
+            greenLight.alpha = lightOff
+            redLight.alpha = lightOn
+            currentLight = .yellow
+        case .yellow:
+            redLight.alpha = lightOff
+            yellowLight.alpha = lightOn
+            currentLight = .green
+        case .green:
+            yellowLight.alpha = lightOff
+            greenLight.alpha = lightOn
+            currentLight = .red
         }
         
         lightChangeButton.configuration = setupButton(with: "NEXT")
