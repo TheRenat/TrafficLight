@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    override func viewDidLayoutSubviews() {
+        redLight.layer.cornerRadius = redLight.frame.height / 2
+        yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
+        greenLight.layer.cornerRadius = greenLight.frame.height / 2
+    }
+    
     private enum CurrentLight {
         case red, yellow, green
     }
@@ -31,15 +37,8 @@ class ViewController: UIViewController {
         redLight.alpha = lightOff
         yellowLight.alpha = lightOff
         greenLight.alpha = lightOff
-        
     }
-    
-    override func viewDidLayoutSubviews() {
-        redLight.layer.cornerRadius = redLight.frame.height / 2
-        yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
-        greenLight.layer.cornerRadius = greenLight.frame.height / 2
-    }
-
+   
     @IBAction func lightChangeTapped() {
         
         switch currentLight {
